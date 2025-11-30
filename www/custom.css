@@ -1,0 +1,36 @@
+#pyramids {
+  width: 700px;
+}
+.inverted {
+  background-color: #ffffee;
+  padding: 3px;
+}
+body {
+  background-color: #333333;
+  color: #ffffee;
+}
+h1.title {
+  color: rgb(222, 228, 235);
+  text-align: center;
+}
+h3.subtitle {
+  color: rgb(253, 141, 60);
+  text-align: center;
+}
+a {
+  color: rgb(253, 141, 60);
+}
+a:hover {
+  text-decoration: underline;
+}
+#pyramidControls {
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+}
+.explanation {
+  background-color: #03153b;
+  color: #b9b91f;
+}
+.selectedBar {
+    fill: #994e0d;
+}
