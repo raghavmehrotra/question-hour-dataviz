@@ -1,10 +1,3 @@
-#pyramids {
-  width: 700px;
-}
-.inverted {
-  background-color: #ffffee;
-  padding: 3px;
-}
 body {
   background-color: #333333;
   color: #ffffee;
@@ -23,14 +16,15 @@ a {
 a:hover {
   text-decoration: underline;
 }
-#pyramidControls {
-  display: grid;
-  grid-template-columns: 1fr 9fr;
-}
 .explanation {
   background-color: #03153b;
   color: #b9b91f;
 }
 .selectedBar {
     fill: #994e0d;
+}
+.topicsChartContainer {
+  border: 5px solid white;
+  padding-left: 1em;
+  margin: 1em;
 }

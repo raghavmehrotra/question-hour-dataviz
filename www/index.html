@@ -1,33 +1,10 @@
 <!--
-The author grants you a license to use this template under the conditions:
-
-    1) You MUST remove the tutorial comments.
-       I recommend doing so as you read/understand them.
-    2) You SHOULD make an attempt to customize this, 
-       it's in everyone's best interest that you work to make
-       your final product visually distinct.
-
-There are two ways to get started w/ an HTML project:
-
-- You can pick a complex template that already has lots of content and pare it
-  down/adapt it to your needs. (Think woodcarving.)
-- You can start with a simple template and only add what you need. (Think LEGO.)
-
-I prefer to build up, but if you pick a more complex starting template the process won't differ much.
-You'll just have more to potentially remove, and you'll still do a bit of building.
-
-In the case of this template, I went to this page <https://bulma.io/documentation/start/overview/>
-and took the 20-line HTML template that they offer.
-
-This template links to the Bulma CSS file on a CDN, Content Delivery Network.
-This is a service that hosts commonly used CSS and JS libraries. For final deployment, we will probably want to stop
-using this in favor of our own copy of Bulma/D3/etc. but that can wait.
-
+CSS Source: <https://bulma.io/documentation/start/overview/>
 -->
 <!doctype html>
 <html>
   <head>
-    <!-- these ensure the page displays properly on all devices, most HTML files include these tags -->
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>
@@ -37,16 +14,12 @@ using this in favor of our own copy of Bulma/D3/etc. but that can wait.
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
     />
-    <!-- load a custom CSS file from the same directory that this file is in -->
+
     <link rel="stylesheet" href="custom.css" />
 
     <style type="text/css">
-      /* custom styles could also go here, sometimes I add some here while experimenting */
+      /* For custom styles */ 
     </style>
-    <!--
-       This was not in the bulma template, but I have added it here, this uses D3 from a CDN.
-       We will replace it as well.
-    -->
     <style>
         #vis.vega-embed {
         width: 100%;
@@ -63,28 +36,14 @@ using this in favor of our own copy of Bulma/D3/etc. but that can wait.
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-    <!-- 
-      Additional HTML and CSS would go here in the <head>.
-    
-      Either using links as seen above, or with <style></style> for inline CSS.
-      
-      Inline <script> tags often go in the body, so that the elements that they
-      reference already exist.
-      It is possible to have your code wait for the HTML to load before running as well,
-      but this is a simpler approach.
-
-      See the <script> tag at the bottom of this page for more detail.
-    -->
   </head>
   <body>
-    <!-- bulma pages use a section/container layout to build some page margins common to most pages-->
 
-    <section>
+    <section class="section">
         <h1 class="title">A deep dive into the Indian Parliament's Question Hour</h1>
     </section>
 
     <section class="section">
-
         <div class="container explanation">
             <div class="columns">
                 <div class="column">
@@ -95,7 +54,7 @@ using this in favor of our own copy of Bulma/D3/etc. but that can wait.
                         Each state's MPs has used the Question Hour in different ways.
                     </p>
                     <p class="block">
-                        Choose your state to see how your MPs have fared.
+                        Choose your state to see how much your MPs have participated in the Question Hour over time.
                     </p>
                 </div>
                 <div class="column">
@@ -156,7 +115,6 @@ using this in favor of our own copy of Bulma/D3/etc. but that can wait.
         </div>
     </section>
 
-
     <section>
         <div class="container explanation">
             <h3 class="subtitle">Searching for topics</h3>
@@ -167,142 +125,22 @@ using this in favor of our own copy of Bulma/D3/etc. but that can wait.
         </div>
         <div class="container columns">
             <div id="topicsChartCol" class="column">
-                <!--Placeholder for bar graph with topics-->
-                <div class="block container" id="topicsChartContainer"></div>
+                <!--Placeholder for bar graph with topics. Append SVG here through JS. -->
+                <div class="block container svgContainer" id="topicsChartContainer"></div>
             </div>
             <div id="topicsChartExpl" class="column">
-                <p>Explanation here</p>
+                <p class="block">Each of these bars corresponds to how many times a particular string (or theme) appeared in 
+                    the subject of a question asked during Question Hour from 2000-2018.
+                </p>
+                <p class="block">
+                    See how your search query compares!
+                </p>
             </div>
         </div>
         
     </section>
 
-
-    <section class="section">
-      <div class="container">
-        <div id="pyramids">
-          <p class="block">
-            The
-            <a
-              href="https://www.federalreserve.gov/releases/z1/dataviz/dfa/distribute/table/#quarter:34;series:Net%20worth;demographic:networth;population:1,3,5,7,9;units:shares"
-              >Federal Reserve publishes data</a
-            >
-            on the distribution of wealth between the<br />
-            <span class="pyramidLabel">top 0.1%</span>,
-            <span class="pyramidLabel">0.1-1%</span>,
-            <span class="pyramidLabel">1-10%</span>,
-            <span class="pyramidLabel">10-50%</span>, and
-            <span class="pyramidLabel inverted">bottom 50%</span> of Americans.
-          </p>
-          <p class="block">
-            Press play to see the way wealth has grown & changed since 1989:
-          </p>
-          <div class="block">
-            <h3 class="subtitle" id="timeDisplay"></h3>
-            <!-- placeholder for SVG -->
-            <div id="pyramidDollars"></div>
-            <div id="pyramidControls">
-              <button class="button" id="playPause">Play</button>
-              <input
-                id="timeSlider"
-                class="input"
-                type="range"
-                min="0"
-                max="140"
-                value="0"
-              />
-            </div>
-          </div>
-          <p class="block">
-            Until 2003 or so, the 1-10% and the 10-50% hold a similar percentage
-            of the nation's wealth. In 2003:Q1 both hold 15.8T, 21 years later
-            the 1-10% have grown their wealth to 55.4T, but the next 40% saw 9T
-            less growth.
-            <br /><br />
-            We can also see this on a chart of assets over time:
-          </p>
-          <div class="block" id="lineChartDollars"></div>
-          <div class="block" id="lineChartPercent"></div>
-          <div class="block" id="pyramidPercent"></div>
-          <p>
-            This is more visible in percentage terms, in 2003 the two groups
-            held a 36.2% and 36.0% share, respectively. In 2024, there is a 6%
-            gulf between them, but it is not the 1-10% that gained the most, the
-            .1% went from 9% in 2003 to over 13%. The remainder of the 1%
-            experienced a small increase of 2% that was mostly wiped out by
-            2023.
-            <br />
-            Looking all the way back to 1989, we see this trend:
-          </p>
-
-          <ul>
-            <li>8.6% to 13.6%</li>
-            <li>14% to 16%</li>
-            <li>38% to 36%</li>
-            <li>35% to 30%</li>
-            <li>3.5% to 2.5%</li>
-          </ul>
-          <p>
-            But the gulf has in fact gotten even wider. Since 1989, the US
-            population has grown from 244 million people to 341 million people.
-            <br />
-            So in 1989, the top 0.1% of the population, ~244,000 people held
-            1.81 trillion in wealth.
-            <br />
-            In 2024, the top 0.1% of the population, ~341,000 people held 20.9
-            trillion in wealth.
-            <br />
-            Similarly, in 1989, the bottom 50%, 122 million people, shared 0.7T.
-            <br />
-            In 2024, the bottom 50%, 170 million people, shared 3.8 trillion.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- this creates a second section beneat the first, this one with two columns -->
-    <!-- 
-    <section class="section">
-      <div class="container">
-        <div class="columns">
-          <div class="column">
-            <div class="box">
-              This is column A. This is column A. This is column A. This is
-              column A. This is column A. This is column A. This is column A.
-              This is column A. This is column A. This is column A. This is
-              column A. This is column A. This is column A. This is column A.
-              This is column A. This is column A. This is column A. This is
-              column A. This is column A. This is column A.
-            </div>
-          </div>
-          <div class="column">
-            <div class="box">
-              <p class="title">
-                <img src="#TODO" />
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    -->
-
-    <!-- This script tag is at the very bottom of the body so that it can reference all of the HTML on the page.
-
-         As mentioned above you can also keep all of your code inside a special event handler that fires after the page loads:
-
-          document.addEventListener("DOMContentLoaded", function(event) { 
-            // everything in here
-          });
-
-        Here, I load the helper functions first, so they will be available
-        for main.js to use.  This is different from Python where files need
-        to import one another.  JS does have that idea, but it is more than
-        you need for single file apps like this one.
-    -->
     <script src="utils.js"></script>
-    <script src="linechart.js"></script>
-    <script src="pyramid.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
