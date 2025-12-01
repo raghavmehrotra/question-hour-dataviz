@@ -1,0 +1,1 @@
+To run the visual, enter the www directory and run python -m http.server.
