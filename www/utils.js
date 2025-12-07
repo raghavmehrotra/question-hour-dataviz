@@ -1,5 +1,5 @@
 
-const margin = { top: 20, right: 20, bottom: 20, left: 20 };
+const margin = { top: 20, right: 20, bottom: 50, left: 40 };
 
 function makeChart(id, chartWidth, chartHeight) {
   const svg = d3
@@ -9,6 +9,7 @@ function makeChart(id, chartWidth, chartHeight) {
     .attr("height", chartHeight)
     .attr("viewBox", `0 0 ${chartWidth} ${chartHeight}`)
     .append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`)
     .attr("id", `${id}-g`);
   return svg;
 }

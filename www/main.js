@@ -5,7 +5,7 @@
 // Creates the empty SVG to be rendered upon page load
 const topicsBarChart = makeChart("#topicsChartContainer", 500, 300);
 
-let questionsData = []; 
+let questionsData = [];
 // These are rough values for now, will update with precise values later.
 // Will also consider a rotating set of themes for comparison + handle the edge
 // case that the user selects one of the predefined themes
@@ -24,10 +24,13 @@ d3.csv("mini.csv").then((data) => {
   drawTopicsChart(topicsBarChart);
 });
 
+let countsPerYear = [];
 d3.select("#submitSearchQuery").on("click", function(event){
     let query = d3.select("#searchQuery").property("value").toLowerCase();
     let count = countQueryOccurrences(query);
+    countsPerYear = countQueryOccurrencesByYear(query)
     drawTopicsChart(topicsBarChart, query, count);
+    drawTopicsLineChart(topicsLineChart, query, countsPerYear);
 })
 
 function countQueryOccurrences(query) {
@@ -68,29 +71,95 @@ function drawTopicsChart(svg, query, count) {
             updateText,
             exit => exit.remove()
         )
-    //console.log(newTopicFrequencies)
 }
 
 function updateRect(rect) {
-    //console.log(rect)
     let maxFreq = d3.max(newTopicFrequencies, topic => topic.count)
-    let width_scale = d3.scaleLinear([0, maxFreq], [0, 500]);
+    let barWidthScale = d3.scaleLinear([0, maxFreq], [0, 500]);
     
     rect.attr("id", (d, i) => `rect${i}`)
         .attr("y", (d, i) => 40*i)
-        .attr("height", 30)
-        .attr("width", d => width_scale(d["count"]))
+        .attr("height", 35)
+        .attr("width", d => barWidthScale(d["count"]))
         .attr("fill", d => d.original ? "#073b60" : "#e67e22")
 }
 
 function updateText(text) {
-    //console.log(text)
     text
         .attr("id", (d, i) => `text${i}`)
         .attr("y", (d, i) => 40*i+10)
         .attr("style", "fill: white; font-size: 12px")
         .text((d, i) => `${d["topic"]}: ${d["count"]}`)
 
+}
+
+// Code to generate the line chart for query frequency over time
+const lineChartWidth = 500;
+const lineChartHeight = 300;
+const topicsLineChart = makeChart("#topicsLineChartContainer", lineChartWidth, lineChartHeight);
+
+function countQueryOccurrencesByYear(query) {
+    counts = {};
+
+    for(let i=2001; i<=2018; i++) {
+        counts[i] = 0;
+    }
+
+    questionsData.forEach((d) => {
+        const year = +d.year
+        if(d.subject.includes(query)) {
+            counts[year] = counts[year] + 1;
+        }
+    })
+
+    // AI: How do I convert a list of regular JS objects into something of the form
+    // [{key1: value1, key2: value2}, {key1: value1, key2: value2}...]
+    return Object.keys(counts).map(year => ({year: +year, count: counts[year]}));
+}
+
+
+function drawTopicsLineChart(svg, query, countsPerYear) {
+    
+    // Found a bug that the data contains questions from 2000
+    countsPerYear = countsPerYear.filter((d) => +d.year >= 2001 && +d.year <= 2018);
+
+    svg.selectAll("*").remove();
+
+    // AI: My x-axis does not appear inside my SVG in d3. How do I change
+    // my width, height and margins to fix this?
+    const innerWidth = lineChartWidth - margin.left - margin.right;
+    const innerHeight = lineChartHeight - margin.top - margin.bottom;
+
+    const g = svg.append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+    const xLineChartScale = d3.scaleLinear()
+        .domain([2001, 2019])
+        .range([0, innerWidth]);
+
+    const yLineChartScale = d3.scaleLinear()
+        .domain([0, d3.max(countsPerYear, d => d.count)])
+        .range([innerHeight*1.10, 0]);
+        //.nice();
+
+    g.append("g")
+        .attr("transform", `translate(0,${innerHeight})`)
+        .call(d3.axisBottom(xLineChartScale).tickFormat(d3.format("d")));
+    
+    g.append("g")
+        .call(d3.axisLeft(yLineChartScale));
+
+    const countsLine = d3.line()
+        .x(d => xLineChartScale(d.year))
+        .y(d => yLineChartScale(d.count))
+        //.curve(d3.curveMonotoneX);
+
+    g.append("path")
+        .datum(countsPerYear)
+        .attr("fill", "none")
+        .attr("stroke", "steelblue")
+        .attr("stroke-width", 2)
+        .attr("d", countsLine);
 }
 
 
@@ -148,12 +217,18 @@ function updateIndiaMap() {
 }
 
 function findStateCount(state) {
+    
+    stateName = state.properties.st_nm;
+    
+    if(stateName == "Telangana" && currentYear <= 2014) {
+        stateName = "Andhra Pradesh"
+    }
+
     let rv = stateCounts.find(
-        state_info => state_info.state == state.properties.st_nm 
+        state_info => state_info.state == stateName 
         && state_info.year == currentYear.toString()
     );
 
-    console.log(rv)
     if(!rv) { // no match means no MP from the state asked questions that year
         return 0
     }
@@ -171,7 +246,6 @@ var slider = d3
   .step(1)
   .default(currentYear)
   .on('onchange', val => {
-    console.log("Selected year:", val);
     currentYear = val;
     updateIndiaMap();
     title.text(`Number of questions asked by MPs from each state in ${currentYear}`);
@@ -190,4 +264,4 @@ let title = mapContainerSVG
     .attr("font-size", "18px")
     .attr("font-weight", "bold")
     .attr("fill", "white")
-    .text(`Map for year ${currentYear}`)
+    .text(`Number of questions asked by MPs from each state in ${currentYear}`)
