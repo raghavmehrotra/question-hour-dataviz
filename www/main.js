@@ -104,7 +104,7 @@ let currentYear = 2001;
 let stateCounts = [];
 
 choroplethScale = d3.scaleThreshold(
-    domain=[0, 50, 100, 500, 1000, 2000, 4000],
+    domain=[0, 50, 100, 500, 1000, 4000, 8000],
     // Source: https://colorbrewer2.org/#type=sequential&scheme=Blues&n=7
     range = ['#edf8fb','#bfd3e6','#9ebcda','#8c96c6','#8c6bb1','#88419d','#6e016b']
 )
@@ -131,7 +131,7 @@ function drawIndiaMap(geojson, path) {
         .attr("stroke", "#333") // Make this conditional too -- remove the borders for Ladakh, Telangana?
 }
 
-d3.json("india.geojson").then(function(geojson) {
+d3.json("india_states.geojson").then(function(geojson) {
     const projection = d3.geoMercator().fitSize([mapWidth, mapHeight], geojson);
     const path = d3.geoPath().projection(projection);
     drawIndiaMap(geojson, path);
@@ -148,15 +148,16 @@ function updateIndiaMap() {
 }
 
 function findStateCount(state) {
-    console.log(state)
     let rv = stateCounts.find(
-        state_info => state_info.primary_state == state.properties.st_nm 
+        state_info => state_info.state == state.properties.st_nm 
         && state_info.year == currentYear.toString()
     );
-    
+
+    console.log(rv)
     if(!rv) { // no match means no MP from the state asked questions that year
         return 0
     }
+
     return rv.count
 }
 
