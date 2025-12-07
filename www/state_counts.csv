@@ -1,0 +1,625 @@
+,year,state,count
+0,2000,Andaman & Nicobar Islands,4
+1,2000,Andhra Pradesh,2705
+2,2000,Arunachal Pradesh,14
+3,2000,Assam,310
+4,2000,Bihar,3221
+5,2000,Chandigarh,108
+6,2000,Daman & Diu,50
+7,2000,Delhi,229
+8,2000,Goa,35
+9,2000,Gujarat,1137
+10,2000,Haryana,594
+11,2000,Himachal Pradesh,137
+12,2000,Jammu & Kashmir,177
+13,2000,Karnataka,1455
+14,2000,Kerala,872
+15,2000,Madhya Pradesh,1732
+16,2000,Maharashtra,4651
+17,2000,Manipur,102
+18,2000,Meghalaya,36
+19,2000,Mizoram,6
+20,2000,Nagaland,21
+21,2000,Odisha,985
+22,2000,Orissa,1
+23,2000,Puducherry,6
+24,2000,Punjab,404
+25,2000,Rajasthan,939
+26,2000,Sikkim,131
+27,2000,Tamil Nadu,1276
+28,2000,Tripura,54
+29,2000,Uttar Pradesh,2743
+30,2000,West Bengal,1187
+31,2001,Andaman & Nicobar Islands,28
+32,2001,Andhra Pradesh,3210
+33,2001,Arunachal Pradesh,3
+34,2001,Assam,181
+35,2001,Bihar,2880
+36,2001,Chandigarh,101
+37,2001,Dadra Nagar & Haveli,7
+38,2001,Daman & Diu,55
+39,2001,Delhi,190
+40,2001,Gujarat,891
+41,2001,Haryana,425
+42,2001,Himachal Pradesh,135
+43,2001,Jammu & Kashmir,142
+44,2001,Karnataka,1803
+45,2001,Kerala,666
+46,2001,Madhya Pradesh,1498
+47,2001,Maharashtra,3885
+48,2001,Manipur,7
+49,2001,Meghalaya,34
+50,2001,Nagaland,33
+51,2001,Odisha,988
+52,2001,Orissa,36
+53,2001,Puducherry,1
+54,2001,Punjab,292
+55,2001,Rajasthan,958
+56,2001,Sikkim,80
+57,2001,Tamil Nadu,1180
+58,2001,Tripura,26
+59,2001,Uttar Pradesh,2189
+60,2001,West Bengal,1116
+61,2002,Andaman & Nicobar Islands,33
+62,2002,Andhra Pradesh,3309
+63,2002,Arunachal Pradesh,6
+64,2002,Assam,287
+65,2002,Bihar,2780
+66,2002,Chandigarh,117
+67,2002,Daman & Diu,23
+68,2002,Delhi,41
+69,2002,Gujarat,1160
+70,2002,Haryana,300
+71,2002,Himachal Pradesh,115
+72,2002,Jammu & Kashmir,157
+73,2002,Jharkhand,5
+74,2002,Karnataka,1918
+75,2002,Kerala,756
+76,2002,Madhya Pradesh,1303
+77,2002,Maharashtra,3922
+78,2002,Manipur,16
+79,2002,Meghalaya,139
+80,2002,Nagaland,25
+81,2002,Odisha,880
+82,2002,Orissa,57
+83,2002,Puducherry,8
+84,2002,Punjab,226
+85,2002,Rajasthan,899
+86,2002,Sikkim,60
+87,2002,Tamil Nadu,1185
+88,2002,Uttar Pradesh,1969
+89,2002,West Bengal,1319
+90,2002,nominated,2
+91,2003,Andaman & Nicobar Islands,43
+92,2003,Andhra Pradesh,2573
+93,2003,Assam,219
+94,2003,Bihar,2157
+95,2003,Chandigarh,95
+96,2003,Dadra Nagar & Haveli,3
+97,2003,Daman & Diu,9
+98,2003,Delhi,6
+99,2003,Gujarat,910
+100,2003,Haryana,265
+101,2003,Himachal Pradesh,286
+102,2003,Jammu & Kashmir,163
+103,2003,Jharkhand,20
+104,2003,Karnataka,1390
+105,2003,Kerala,860
+106,2003,Madhya Pradesh,1044
+107,2003,Maharashtra,3101
+108,2003,Manipur,32
+109,2003,Meghalaya,26
+110,2003,Nagaland,31
+111,2003,Odisha,876
+112,2003,Orissa,36
+113,2003,Puducherry,1
+114,2003,Punjab,179
+115,2003,Rajasthan,586
+116,2003,Sikkim,16
+117,2003,Tamil Nadu,989
+118,2003,Tripura,3
+119,2003,Uttar Pradesh,1736
+120,2003,Uttarakhand,4
+121,2003,West Bengal,1307
+122,2003,nominated,2
+123,2004,Andaman & Nicobar Islands,47
+124,2004,Andhra Pradesh,1182
+125,2004,Arunachal Pradesh,45
+126,2004,Assam,265
+127,2004,Bihar,1253
+128,2004,Chandigarh,43
+129,2004,Chhattisgarh,189
+130,2004,Dadra Nagar & Haveli,6
+131,2004,Daman & Diu,5
+132,2004,Delhi,53
+133,2004,Goa,22
+134,2004,Gujarat,621
+135,2004,Haryana,87
+136,2004,Himachal Pradesh,225
+137,2004,Jammu & Kashmir,122
+138,2004,Jharkhand,239
+139,2004,Karnataka,421
+140,2004,Kerala,521
+141,2004,Lakshadweep,27
+142,2004,Madhya Pradesh,648
+143,2004,Maharashtra,1620
+144,2004,Manipur,23
+145,2004,Mizoram,4
+146,2004,Nagaland,2
+147,2004,Odisha,746
+148,2004,Orissa,3
+149,2004,Puducherry,52
+150,2004,Punjab,88
+151,2004,Rajasthan,618
+152,2004,Sikkim,27
+153,2004,Tamil Nadu,299
+154,2004,Tripura,9
+155,2004,Uttar Pradesh,1461
+156,2004,Uttarakhand,68
+157,2004,West Bengal,920
+158,2005,Andaman & Nicobar Islands,89
+159,2005,Andhra Pradesh,2447
+160,2005,Arunachal Pradesh,72
+161,2005,Assam,482
+162,2005,Bihar,1580
+163,2005,Chandigarh,66
+164,2005,Chhattisgarh,340
+165,2005,Daman & Diu,15
+166,2005,Delhi,103
+167,2005,Goa,16
+168,2005,Gujarat,1551
+169,2005,Haryana,226
+170,2005,Himachal Pradesh,164
+171,2005,Jammu & Kashmir,167
+172,2005,Jharkhand,480
+173,2005,Karnataka,1196
+174,2005,Kerala,942
+175,2005,Lakshadweep,42
+176,2005,Madhya Pradesh,1244
+177,2005,Maharashtra,3401
+178,2005,Manipur,32
+179,2005,Nagaland,4
+180,2005,Odisha,1549
+181,2005,Puducherry,116
+182,2005,Punjab,275
+183,2005,Rajasthan,1123
+184,2005,Sikkim,9
+185,2005,Tamil Nadu,1396
+186,2005,Tripura,2
+187,2005,Uttar Pradesh,3262
+188,2005,Uttarakhand,125
+189,2005,West Bengal,1680
+190,2005,nominated,36
+191,2006,Andaman & Nicobar Islands,76
+192,2006,Andhra Pradesh,1936
+193,2006,Arunachal Pradesh,58
+194,2006,Assam,285
+195,2006,Bihar,1033
+196,2006,Chhattisgarh,116
+197,2006,Daman & Diu,31
+198,2006,Delhi,127
+199,2006,Goa,27
+200,2006,Gujarat,1286
+201,2006,Haryana,298
+202,2006,Himachal Pradesh,50
+203,2006,Jammu & Kashmir,91
+204,2006,Jharkhand,535
+205,2006,Karnataka,933
+206,2006,Kerala,688
+207,2006,Lakshadweep,31
+208,2006,Madhya Pradesh,969
+209,2006,Maharashtra,2702
+210,2006,Manipur,37
+211,2006,Mizoram,1
+212,2006,Nagaland,1
+213,2006,Odisha,1215
+214,2006,Puducherry,73
+215,2006,Punjab,154
+216,2006,Rajasthan,670
+217,2006,Tamil Nadu,1245
+218,2006,Tripura,1
+219,2006,Uttar Pradesh,2405
+220,2006,Uttarakhand,109
+221,2006,West Bengal,1248
+222,2006,nominated,41
+223,2007,Andaman & Nicobar Islands,131
+224,2007,Andhra Pradesh,2036
+225,2007,Arunachal Pradesh,117
+226,2007,Assam,349
+227,2007,Bihar,941
+228,2007,Chhattisgarh,174
+229,2007,Daman & Diu,4
+230,2007,Delhi,150
+231,2007,Goa,56
+232,2007,Gujarat,1198
+233,2007,Haryana,353
+234,2007,Himachal Pradesh,108
+235,2007,Jammu & Kashmir,161
+236,2007,Jharkhand,537
+237,2007,Karnataka,1130
+238,2007,Kerala,773
+239,2007,Lakshadweep,11
+240,2007,Madhya Pradesh,1029
+241,2007,Maharashtra,2895
+242,2007,Manipur,49
+243,2007,Odisha,1253
+244,2007,Puducherry,86
+245,2007,Punjab,120
+246,2007,Rajasthan,913
+247,2007,Sikkim,23
+248,2007,Tamil Nadu,1088
+249,2007,Uttar Pradesh,2045
+250,2007,Uttarakhand,44
+251,2007,West Bengal,1309
+252,2007,nominated,11
+253,2008,Andaman & Nicobar Islands,83
+254,2008,Andhra Pradesh,1522
+255,2008,Arunachal Pradesh,79
+256,2008,Assam,285
+257,2008,Bihar,835
+258,2008,Chhattisgarh,405
+259,2008,Daman & Diu,2
+260,2008,Delhi,61
+261,2008,Goa,66
+262,2008,Gujarat,1074
+263,2008,Haryana,138
+264,2008,Himachal Pradesh,44
+265,2008,Jammu & Kashmir,65
+266,2008,Jharkhand,365
+267,2008,Karnataka,610
+268,2008,Kerala,653
+269,2008,Lakshadweep,7
+270,2008,Madhya Pradesh,598
+271,2008,Maharashtra,1570
+272,2008,Manipur,31
+273,2008,Mizoram,3
+274,2008,Odisha,900
+275,2008,Puducherry,67
+276,2008,Punjab,95
+277,2008,Rajasthan,669
+278,2008,Sikkim,17
+279,2008,Tamil Nadu,756
+280,2008,Uttar Pradesh,1421
+281,2008,Uttarakhand,61
+282,2008,West Bengal,939
+283,2008,nominated,22
+284,2009,Andaman & Nicobar Islands,31
+285,2009,Andhra Pradesh,1900
+286,2009,Arunachal Pradesh,29
+287,2009,Assam,112
+288,2009,Bihar,1081
+289,2009,Chhattisgarh,132
+290,2009,Dadra Nagar & Haveli,3
+291,2009,Delhi,197
+292,2009,Goa,41
+293,2009,Gujarat,1055
+294,2009,Haryana,199
+295,2009,Himachal Pradesh,160
+296,2009,Jammu & Kashmir,81
+297,2009,Jharkhand,537
+298,2009,Karnataka,951
+299,2009,Kerala,821
+300,2009,Madhya Pradesh,667
+301,2009,Maharashtra,2367
+302,2009,Manipur,49
+303,2009,Mizoram,1
+304,2009,Odisha,1237
+305,2009,Puducherry,4
+306,2009,Punjab,133
+307,2009,Rajasthan,485
+308,2009,Sikkim,12
+309,2009,Tamil Nadu,985
+310,2009,Uttar Pradesh,1804
+311,2009,Uttarakhand,47
+312,2009,West Bengal,685
+313,2010,Andaman & Nicobar Islands,51
+314,2010,Andhra Pradesh,2799
+315,2010,Arunachal Pradesh,31
+316,2010,Assam,264
+317,2010,Bihar,2664
+318,2010,Chhattisgarh,358
+319,2010,Dadra Nagar & Haveli,15
+320,2010,Daman & Diu,11
+321,2010,Delhi,312
+322,2010,Goa,100
+323,2010,Gujarat,1707
+324,2010,Haryana,307
+325,2010,Himachal Pradesh,208
+326,2010,Jammu & Kashmir,171
+327,2010,Jharkhand,657
+328,2010,Karnataka,1760
+329,2010,Kerala,1554
+330,2010,Lakshadweep,71
+331,2010,Madhya Pradesh,1240
+332,2010,Maharashtra,3564
+333,2010,Manipur,62
+334,2010,Mizoram,4
+335,2010,Nagaland,2
+336,2010,Odisha,1501
+337,2010,Punjab,524
+338,2010,Rajasthan,1128
+339,2010,Sikkim,13
+340,2010,Tamil Nadu,2508
+341,2010,Tripura,50
+342,2010,Uttar Pradesh,3310
+343,2010,Uttarakhand,80
+344,2010,West Bengal,1392
+345,2010,nominated,40
+346,2011,Andaman & Nicobar Islands,51
+347,2011,Andhra Pradesh,1854
+348,2011,Arunachal Pradesh,15
+349,2011,Assam,291
+350,2011,Bihar,2098
+351,2011,Chhattisgarh,425
+352,2011,Dadra Nagar & Haveli,14
+353,2011,Daman & Diu,26
+354,2011,Delhi,217
+355,2011,Goa,90
+356,2011,Gujarat,1571
+357,2011,Haryana,383
+358,2011,Himachal Pradesh,173
+359,2011,Jammu & Kashmir,108
+360,2011,Jharkhand,423
+361,2011,Karnataka,1556
+362,2011,Kerala,1161
+363,2011,Lakshadweep,179
+364,2011,Madhya Pradesh,1250
+365,2011,Maharashtra,2709
+366,2011,Manipur,37
+367,2011,Mizoram,4
+368,2011,Nagaland,10
+369,2011,Odisha,1140
+370,2011,Punjab,448
+371,2011,Rajasthan,1061
+372,2011,Sikkim,46
+373,2011,Tamil Nadu,1969
+374,2011,Tripura,68
+375,2011,Uttar Pradesh,3066
+376,2011,Uttarakhand,111
+377,2011,West Bengal,952
+378,2011,nominated,69
+379,2012,Andaman & Nicobar Islands,56
+380,2012,Andhra Pradesh,2176
+381,2012,Arunachal Pradesh,27
+382,2012,Assam,340
+383,2012,Bihar,2697
+384,2012,Chhatisgarh,1
+385,2012,Chhattisgarh,503
+386,2012,Daman & Diu,23
+387,2012,Delhi,337
+388,2012,Goa,91
+389,2012,Gujarat,1623
+390,2012,Haryana,628
+391,2012,Himachal Pradesh,150
+392,2012,Jammu & Kashmir,65
+393,2012,Jharkhand,647
+394,2012,Karnataka,1892
+395,2012,Kerala,1284
+396,2012,Lakshadweep,179
+397,2012,Madhya Pradesh,1457
+398,2012,Maharashtra,3282
+399,2012,Manipur,25
+400,2012,Meghalaya,1
+401,2012,Mizoram,1
+402,2012,Nagaland,20
+403,2012,Odisha,1518
+404,2012,Puducherry,1
+405,2012,Punjab,494
+406,2012,Rajasthan,1372
+407,2012,Sikkim,69
+408,2012,Tamil Nadu,2778
+409,2012,Tripura,119
+410,2012,Uttar Pradesh,3475
+411,2012,Uttarakhand,93
+412,2012,West Bengal,1154
+413,2012,nominated,90
+414,2013,Andaman & Nicobar Islands,28
+415,2013,Andhra Pradesh,1494
+416,2013,Arunachal Pradesh,12
+417,2013,Assam,260
+418,2013,Bihar,1999
+419,2013,Chandigarh,17
+420,2013,Chhatisgarh,1
+421,2013,Chhattisgarh,381
+422,2013,Daman & Diu,15
+423,2013,Delhi,268
+424,2013,Goa,89
+425,2013,Gujarat,1384
+426,2013,Haryana,507
+427,2013,Himachal Pradesh,138
+428,2013,Jammu & Kashmir,43
+429,2013,Jharkhand,459
+430,2013,Karnataka,1567
+431,2013,Kerala,966
+432,2013,Lakshadweep,167
+433,2013,Madhya Pradesh,965
+434,2013,Maharashtra,2719
+435,2013,Manipur,41
+436,2013,Meghalaya,16
+437,2013,Nagaland,1
+438,2013,Odisha,1223
+439,2013,Punjab,288
+440,2013,Rajasthan,1043
+441,2013,Sikkim,37
+442,2013,Tamil Nadu,2497
+443,2013,Tripura,72
+444,2013,Uttar Pradesh,2776
+445,2013,Uttarakhand,89
+446,2013,West Bengal,875
+447,2013,nominated,68
+448,2014,Andaman & Nicobar Islands,37
+449,2014,Andhra Pradesh,1631
+450,2014,Arunachal Pradesh,47
+451,2014,Assam,230
+452,2014,Bihar,1385
+453,2014,Chandigarh,41
+454,2014,Chhattisgarh,266
+455,2014,Delhi,217
+456,2014,Goa,40
+457,2014,Gujarat,916
+458,2014,Haryana,419
+459,2014,Himachal Pradesh,189
+460,2014,Jammu & Kashmir,47
+461,2014,Jharkhand,618
+462,2014,Karnataka,1841
+463,2014,Kerala,1717
+464,2014,Lakshadweep,117
+465,2014,Madhya Pradesh,813
+466,2014,Maharashtra,2752
+467,2014,Manipur,46
+468,2014,Meghalaya,40
+469,2014,Mizoram,2
+470,2014,Nagaland,4
+471,2014,Odisha,788
+472,2014,Puducherry,10
+473,2014,Punjab,313
+474,2014,Rajasthan,1243
+475,2014,Sikkim,81
+476,2014,Tamil Nadu,1753
+477,2014,Tripura,76
+478,2014,Uttar Pradesh,1619
+479,2014,Uttarakhand,76
+480,2014,West Bengal,668
+481,2014,nominated,20
+482,2015,Andaman & Nicobar Islands,16
+483,2015,Andhra Pradesh,2335
+484,2015,Arunachal Pradesh,79
+485,2015,Assam,462
+486,2015,Bihar,1582
+487,2015,Chandigarh,130
+488,2015,Chhattisgarh,432
+489,2015,Dadra Nagar & Haveli,20
+490,2015,Daman & Diu,17
+491,2015,Delhi,398
+492,2015,Goa,82
+493,2015,Gujarat,1210
+494,2015,Haryana,405
+495,2015,Himachal Pradesh,146
+496,2015,Jammu & Kashmir,98
+497,2015,Jharkhand,942
+498,2015,Karnataka,1868
+499,2015,Kerala,1737
+500,2015,Lakshadweep,78
+501,2015,Madhya Pradesh,1520
+502,2015,Maharashtra,3598
+503,2015,Manipur,33
+504,2015,Meghalaya,80
+505,2015,Mizoram,2
+506,2015,Nagaland,9
+507,2015,Odisha,1086
+508,2015,Puducherry,1
+509,2015,Punjab,310
+510,2015,Rajasthan,1878
+511,2015,Sikkim,137
+512,2015,Tamil Nadu,3189
+513,2015,Telangana,81
+514,2015,Tripura,128
+515,2015,Uttar Pradesh,2500
+516,2015,Uttarakhand,194
+517,2015,West Bengal,822
+518,2015,nominated,1
+519,2016,Andaman & Nicobar Islands,19
+520,2016,Andhra Pradesh,2036
+521,2016,Arunachal Pradesh,58
+522,2016,Assam,452
+523,2016,Bihar,1710
+524,2016,Chandigarh,104
+525,2016,Chhattisgarh,481
+526,2016,Dadra Nagar & Haveli,16
+527,2016,Daman & Diu,3
+528,2016,Delhi,450
+529,2016,Goa,113
+530,2016,Gujarat,1315
+531,2016,Haryana,376
+532,2016,Himachal Pradesh,169
+533,2016,Jammu & Kashmir,60
+534,2016,Jharkhand,1001
+535,2016,Karnataka,1657
+536,2016,Kerala,1413
+537,2016,Lakshadweep,63
+538,2016,Madhya Pradesh,1554
+539,2016,Maharashtra,3324
+540,2016,Manipur,35
+541,2016,Meghalaya,49
+542,2016,Mizoram,2
+543,2016,Nagaland,4
+544,2016,Odisha,987
+545,2016,Punjab,302
+546,2016,Rajasthan,1651
+547,2016,Sikkim,73
+548,2016,Tamil Nadu,3231
+549,2016,Telangana,116
+550,2016,Tripura,142
+551,2016,Uttar Pradesh,2730
+552,2016,Uttarakhand,167
+553,2016,West Bengal,639
+554,2016,nominated,89
+555,2017,Andaman & Nicobar Islands,15
+556,2017,Andhra Pradesh,1609
+557,2017,Arunachal Pradesh,72
+558,2017,Assam,368
+559,2017,Bihar,1176
+560,2017,Chandigarh,111
+561,2017,Chhattisgarh,425
+562,2017,Dadra Nagar & Haveli,29
+563,2017,Delhi,371
+564,2017,Goa,88
+565,2017,Gujarat,1064
+566,2017,Haryana,266
+567,2017,Himachal Pradesh,126
+568,2017,Jammu & Kashmir,77
+569,2017,Jharkhand,719
+570,2017,Karnataka,1131
+571,2017,Kerala,1136
+572,2017,Lakshadweep,70
+573,2017,Madhya Pradesh,1189
+574,2017,Maharashtra,2306
+575,2017,Manipur,30
+576,2017,Meghalaya,44
+577,2017,Nagaland,3
+578,2017,Odisha,541
+579,2017,Punjab,296
+580,2017,Rajasthan,1099
+581,2017,Sikkim,49
+582,2017,Tamil Nadu,2223
+583,2017,Telangana,87
+584,2017,Tripura,107
+585,2017,Uttar Pradesh,2142
+586,2017,Uttarakhand,81
+587,2017,West Bengal,663
+588,2017,nominated,91
+589,2018,Andaman & Nicobar Islands,18
+590,2018,Andhra Pradesh,1605
+591,2018,Arunachal Pradesh,53
+592,2018,Assam,415
+593,2018,Bihar,1417
+594,2018,Chandigarh,148
+595,2018,Chhattisgarh,504
+596,2018,Dadra Nagar & Haveli,20
+597,2018,Delhi,399
+598,2018,Goa,109
+599,2018,Gujarat,1367
+600,2018,Haryana,284
+601,2018,Himachal Pradesh,122
+602,2018,Jammu & Kashmir,93
+603,2018,Jharkhand,860
+604,2018,Karnataka,1174
+605,2018,Kerala,1269
+606,2018,Lakshadweep,36
+607,2018,Madhya Pradesh,1332
+608,2018,Maharashtra,2928
+609,2018,Manipur,46
+610,2018,Meghalaya,56
+611,2018,Mizoram,1
+612,2018,Nagaland,4
+613,2018,Odisha,626
+614,2018,Punjab,313
+615,2018,Rajasthan,1243
+616,2018,Sikkim,63
+617,2018,Tamil Nadu,2624
+618,2018,Telangana,85
+619,2018,Tripura,120
+620,2018,Uttar Pradesh,2302
+621,2018,Uttarakhand,83
+622,2018,West Bengal,747
+623,2018,nominated,138

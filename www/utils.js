@@ -7,6 +7,8 @@ function makeChart(id, chartWidth, chartHeight) {
     .append("svg")
     .attr("width", chartWidth)
     .attr("height", chartHeight)
-    .attr("viewBox", `0 0 ${chartWidth} ${chartHeight}`);
+    .attr("viewBox", `0 0 ${chartWidth} ${chartHeight}`)
+    .append("g")
+    .attr("id", `${id}-g`);
   return svg;
 }
