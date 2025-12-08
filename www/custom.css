@@ -135,3 +135,22 @@ a:hover {
     /* 3. Centers inline content inside this container (like the checkbox label) */
     text-align: center;
 }
+
+#tooltip {
+    /* Required for positioning relative to the body */
+    position: absolute;
+    /* Invisible by default */
+    opacity: 0; 
+    /* The tiny box style */
+    padding: 2px 2px;
+    background: #333;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    font-size: 14px;
+    /* Optional: Smooth transition for fade-in/out */
+    transition: opacity 0.2s;
+    /* Ensure it shows above the map */
+    pointer-events: none;
+    z-index: 9999; 
+}

@@ -268,6 +268,7 @@ d3.csv("state_counts.csv").then((data) => {
     console.log(stateCounts)
 });
 
+const tooltip = d3.select("#tooltip");
 function drawIndiaMap(geojson, path) {
     indiaMap.selectAll("path")
         .data(geojson.features)
@@ -282,6 +283,30 @@ function drawIndiaMap(geojson, path) {
             return choroplethScale(count);
         })
         .attr("stroke", "#333") // Make this conditional too -- remove the borders for Ladakh, Telangana?
+        .on("mouseover", function(event) {
+            let stateName = d3.select(this).datum().properties.st_nm
+            if(stateName == "Telangana" && currentYear <= 2014) {
+                stateName = "Andhra Pradesh";
+            }
+            else if(stateName == "Ladakh") {
+                stateName = "Jammu and Kashmir"
+            }
+            console.log(tooltip)
+            tooltip
+                .style("opacity", 1)
+                .text(stateName)
+                .style("left", (event.pageX + 10) + "px")
+                .style("top", (event.pageY + 10) + "px");
+        })
+        .on("mousemove", function(event) {
+            tooltip
+                .style("left", (event.pageX + 10) + "px")
+                .style("top", (event.pageY + 10) + "px");
+        })
+        .on("mouseout", function() {
+            tooltip
+                .style("opacity", 0);
+            });
     drawThresholdLegend();
 }
 
