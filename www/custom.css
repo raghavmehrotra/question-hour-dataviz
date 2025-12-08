@@ -1,14 +1,43 @@
 body {
-  background-color: #333333;
+  background-color: rgb(0, 0, 0);
   color: #ffffee;
+}
+body, html {
+  /* Removes default browser spacing that pushes content off-screen */
+  margin: 0;
+  padding: 0;
+  
+  /* Ensures 100% width is calculated correctly */
+  width: 100%; 
+  
+  /* Optional: Ensures the box model calculation is intuitive */
+  box-sizing: border-box; 
+}
+* {
+    box-sizing: border-box;
+}
+.center-horizontal {
+    text-align: center; 
+    width: fit-content; 
+    margin: 0 auto;
+}
+
+.center-horizontal iframe {
+    margin: 0;
+    float: none;
+}
+.section {
+    background-color: rgb(0, 0, 0);
+    height: 100%;
 }
 h1.title {
   color: rgb(222, 228, 235);
   text-align: center;
 }
 h3.subtitle {
-  color: rgb(253, 141, 60);
+  color: rgb(222, 228, 235);
   text-align: center;
+  font-family: sans-serif;
 }
 a {
   color: rgb(253, 141, 60);
@@ -17,14 +46,79 @@ a:hover {
   text-decoration: underline;
 }
 .explanation {
-  background-color: #03153b;
-  color: #b9b91f;
+  background-color: #000000;
+  color: #ffffff;
 }
 .selectedBar {
     fill: #994e0d;
 }
 .topicsChartContainer {
   border: 5px solid white;
-  padding-left: 1em;
-  margin: 1em;
+}
+#topicsLineChartContainer svg {
+    margin-left: -100px; 
+}
+#normalizeCountsCheckboxLabel {
+    position: absolute;
+    top: 700px;
+    left: 50px;
+}
+.button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.column {
+    text-align: center;
+}
+.hidden {
+    display: none;
+}
+#header {
+  /* Set Width: Block elements default to full width (100%), but 
+     it's good practice to explicitly confirm it for clarity. */
+  width: 100%; 
+  
+  /* Set Height: Use a small, fixed unit to make it "thin." 
+     You can choose px, rem, or a small viewport height (vh) percentage. */
+  height: 50px; /* Example: A thin header, adjust as needed */
+
+  /* Optional: Background color helps visualize the header's dimensions */
+  background-color: #333;
+  color: white;
+  padding: 10px 0; 
+}
+
+.topnav {
+    display: flex; /* Enable flexbox */
+    justify-content: flex-start; /* Push items to the right side of the container */
+    background-color: #333;
+    /* Remove 'overflow: hidden;' if you switch to Flexbox */
+}
+
+.topnav a {
+    /* Remove 'float: right;' if you use Flexbox */
+    color: #f2f2f2;
+    text-align: center;
+    padding: 6px 14px;
+    text-decoration: none;
+    font-size: 14px;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+.citations {
+    font-size: small;
 }

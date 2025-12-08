@@ -24,40 +24,45 @@ CSS Source: <https://bulma.io/documentation/start/overview/>
   </head>
   <body>
 
-    <section class="section">
-        <h1 class="title">A deep dive into the Indian Parliament's Question Hour</h1>
+    <section id="header" class="section permanent">
+        <div class="topnav">
+            <a class="toggleView" data-rendering-id="home">Home</a>
+            <a class="toggleView" data-rendering-id="textSearchSection">Topics</a>
+            <a class="toggleView" data-rendering-id="mapSection">States</a>
+        </div>
     </section>
-
-    <section class="section">
+    <section id="home" class="section">
+        <h1 class="title">Exploring the Lok Sabha's Question Hour</h1>
         <div class="container explanation">
-            <div class="columns">
-                <div class="column">
-                    <h3 class="subtitle">An introduction</h3>
-                    <p class="block">
-                        The first hour of every Parliament session in India is called the Question Hour. It was created <br/>
-                        as a way for MPs to hold the government accountable by demanding answers to relevant issues. <br/>
-                        Each state's MPs has used the Question Hour in different ways.
-                    </p>
-                    <p class="block">
-                        Choose your state to see how much your MPs have participated in the Question Hour over time.
-                    </p>
-                </div>
+            <p class="block">
+                Parliamentary elections to the Lok Sabha are held in India every 5 years. While candidates running for office are often under scrutiny due to the high stakes of elections, the Indian
+                Constitution has also encoded practices to hold Members of Parliament accountable to citizens once elected.
+            </p>
+            <p class="block">
+                One such tool is the Lok Sabha's Question Hour, the first hour of daily parliamentary proceedings when MPs raise questions about government administration and activity.
+                Questions cover diverse areas of public interest, including food security, government spending, healthcare, and climate change. The Government must provide a reply to the MP raising the question.
+            </p>
+            <p class="block">
+                This website is intended to help citizens understand the Question Hour better. You can explore what topics are being discussed and how frequently, as well as how MPs from different states have used the Question Hour over time.
+                If you are not familiar with the Lok Sabha's proceedings, this video might be a helpful example of how the Question Hour operates.
+            </p>
+            <div class="center-horizontal">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/T03SnK0LYqI?si=JNiEpzHzK0Leii0N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div id="entryButtonsContainer" class="container columns">
+            <div class="column">
+                <button id="textSearchButton" class="button" data-rendering-id="textSearchSection">Explore by Topic</button>
+                <p>Which topics are covered in the Question Hour? Click here to explore.</p>
+            </div>
+            <div class="column">
+                <button id="mapSearchButton" class="button" data-rendering-id="mapSection">Explore by State</button>
+                <p>Which states participate more than others? Click here to explore.</p>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <div class="container explanation">
-            <h3 class="subtitle">How do north and south states fare in the Question Hour?</h3>
-            <p>Each state has different ways in which they use the Question Hour. We see for example, that Southern states
-                consistently ask more questions. Andhra Pradesh and Tamil Nadu in particular, have used the Question Hour far
-                more than other states. (In general, states with more MPs in the Lok Sabha will have more questions -- which
-                explains the high numbers in Uttar Pradesh, Bihar, Tamil Nadu, and Andhra Pradesh)
-            </p>
-        </div>
-    </section>
-
-    <section>
+    <section id="textSearchSection" class="hidden">
         <div class="container explanation">
             <h3 class="subtitle">Searching for topics</h3>
             <p class="block">Enter a topic to see how it compares to some of the others discussed in the Lok Sabha:
@@ -76,26 +81,39 @@ CSS Source: <https://bulma.io/documentation/start/overview/>
             </div>
         </div>
         <div class="container columns">
-            <div id="topicsChartCol column">
+            <div id="topicsChartCol" class="column">
+                <h3 id="topicsChartHeader">Frequency of Topics in the Question Hour (2001-2018)</h3>
                 <!--Placeholder for bar graph with topics. Append SVG here through JS. -->
-                <div class="block container svgContainer" id="topicsChartContainer"></div>
+                <div class="block svgContainer" id="topicsChartContainer"></div>
             </div>
             
-            <div id="topicsLineChartCol column">
-                <h3 id="topicsLineChartHeader">Testing the line chart Header</h3>
+            <div id="topicsLineChartCol" class="column">
+                <h3 id="topicsLineChartHeader">Annual Mentions of Topic in the Question Hour (enter text)</h3>
                 <!--Placeholder for line chart for a topic. Append SVG here through JS. -->
-                <div class="block container svgContainer" id="topicsLineChartContainer"></div>
+                <div class="block svgContainer" id="topicsLineChartContainer"></div>
             </div>
-
         </div>
-        
     </section>
 
-    <section>
+    <section id="mapSection" class="hidden">
         <div class="container">
-            <div id="indiaMapContainer" class="container"></div>
+            <div id="indiaMapContainer" class="container" style="position:relative"></div>
+            <label id="normalizeCountsCheckboxLabel" for="normalizeCountsCheckbox">
+                <input type="checkbox" id="normalizeCountsCheckbox">
+                    Show questions per MP instead of absolute numbers
+            </label>
         </div>
     </section>
+
+    <div id="citations" class="citations">
+        <p>
+            Data: "TPCD-IPD: TCPD Indian Parliament Dataset (Question Hour) 1.0". Trivedi Centre for Political Data, Ashoka University
+        </p>
+        <p>
+            Map: Parliamentary Constituencies Maps are provided by <a href="https://projects.datameet.org/maps/">Data{Meet} Community Maps Project</a>.
+            It has been made available under the <a href="https://creativecommons.org/licenses/by/2.5/in/">Creative Commons Attribution 2.5 India</a>.
+        </p>
+    </div>
 
     <script src="utils.js"></script>
     <!--This provides a template for a simple slider to move through the map-->

@@ -1,5 +1,5 @@
 
-const margin = { top: 20, right: 20, bottom: 50, left: 40 };
+const margin = { top: 20, right: 20, bottom: 60, left: 60 };
 
 function makeChart(id, chartWidth, chartHeight) {
   const svg = d3

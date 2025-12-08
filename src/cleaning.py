@@ -121,8 +121,19 @@ def standardize_state_names(df):
     This updates the state name to the most recent name.
     """
 
-    df["state"] = df["state"].replace("Orissa", "Odisha")
-    df["state"] = df["state"].replace("Chhatisgarh", "Chhattisgarh")
+    pattern = r"\s*Orissa\s*"
+    df["state"] = df["state"].astype(str).apply(
+        lambda s: re.sub(pattern, "Odisha", s)
+    )
+
+    pattern = r"\s*Chhatisgarh\s*"
+    df["state"] = df["state"].astype(str).apply(
+        lambda s: re.sub(pattern, "Chhattisgarh", s)
+    )
+
+    df["state"] = df["state"].replace("Jammu and Kashmir", "Jammu & Kashmir")
+    df["state"] = df["state"].replace("Andaman and Nicobar Islands", "Andaman & Nicobar Islands")
+    
     return df
 
 def trim_incomplete_years(df):
