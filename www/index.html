@@ -43,7 +43,7 @@ CSS Source: <https://bulma.io/documentation/start/overview/>
                 Questions cover diverse areas of public interest, including food security, government spending, healthcare, and climate change. The Government must provide a reply to the MP raising the question.
             </p>
             <p class="block">
-                This website is intended to help citizens understand the Question Hour better. You can explore what topics are being discussed and how frequently, as well as how MPs from different states have used the Question Hour over time.
+                This website is intended to help citizens understand the Question Hour better. Using data from 2001 to 2018, you can explore what topics are being discussed and how frequently, as well as how MPs from different states have used the Question Hour over time.
                 If you are not familiar with the Lok Sabha's proceedings, this video might be a helpful example of how the Question Hour operates.
             </p>
             <div class="center-horizontal">
@@ -64,22 +64,22 @@ CSS Source: <https://bulma.io/documentation/start/overview/>
 
     <section id="textSearchSection" class="hidden">
         <div class="container explanation">
-            <h3 class="subtitle">Searching for topics</h3>
-            <p class="block">Enter a topic to see how it compares to some of the others discussed in the Lok Sabha:
+            <h3 class="subtitle">Comparing Themes/Topics in the Question Hour</h3>
+            <p class="block">
+                Topics discussed during the Question Hour vary widely, but they are typically asked with the aim of holding the government accountable.
+            </p>
+            <p class="block">
+                In the graph below (left), each bar represents the number of times the subject of a question contained a particular theme (or topic).
+                Enter a topic of your choice (e.g. "migration", "food", "gender") to see how it compares to other topics discussed in the Question Hour.
+                You will also see a line chart appear on the right indicating how that theme has appeared over time.
+            </p>
+            <div>
+                Enter a search term:
                 <input type="text" id="searchQuery" class="search-query"/>
                 <input type="submit" id="submitSearchQuery" value="Submit" />
-            </p>
-        </div>
-        <div class="container">
-            <div id="topicsChartExpl">
-                <p class="block">Each of these bars corresponds to how many times a particular string (or theme) appeared in 
-                    the subject of a question asked during Question Hour from 2000-2018.
-                </p>
-                <p class="block">
-                    See how your search query compares!
-                </p>
             </div>
         </div>
+
         <div class="container columns">
             <div id="topicsChartCol" class="column">
                 <h3 id="topicsChartHeader">Frequency of Topics in the Question Hour (2001-2018)</h3>
@@ -88,7 +88,7 @@ CSS Source: <https://bulma.io/documentation/start/overview/>
             </div>
             
             <div id="topicsLineChartCol" class="column">
-                <h3 id="topicsLineChartHeader">Annual Mentions of Topic in the Question Hour (enter text)</h3>
+                <h3 id="topicsLineChartHeader">Annual Mentions of Topic in the Question Hour (enter text to see chart)</h3>
                 <!--Placeholder for line chart for a topic. Append SVG here through JS. -->
                 <div class="block svgContainer" id="topicsLineChartContainer"></div>
             </div>
@@ -96,6 +96,20 @@ CSS Source: <https://bulma.io/documentation/start/overview/>
     </section>
 
     <section id="mapSection" class="hidden">
+        <div class="container explanation">
+            <h3 class="subtitle" id="mapHeader">Comparing States' Participation in the Question Hour</h3>
+            <p class="block">
+                Indian states have very different political and social histories and hold the government accountable in different ways.
+                By dragging the slider along the line, you can explore the number of questions that MPs of each state asked in the
+                Question Hour from 2001 to 2018.
+            </p>
+            <p class="block">
+                Each state has a vastly different number of MPs in the Lok Sabha (Uttar Pradesh has 80, Karnataka has 28 and Sikkim has 1).
+                Remember to use the checkbox that allows you to normalize the number of questions by MP.
+            </p>
+            <br/>
+            <br/>
+        </div>
         <div class="container">
             <div id="indiaMapContainer" class="container" style="position:relative"></div>
             <label id="normalizeCountsCheckboxLabel" for="normalizeCountsCheckbox">

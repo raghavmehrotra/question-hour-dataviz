@@ -237,7 +237,7 @@ let currentYear = 2001;
 let stateCounts = [];
 
 const choroplethScale = d3.scaleThreshold()
-    .domain([50, 100, 500, 1000, 2000, 4000])
+    .domain([25, 50, 100, 500, 1000, 2000])
     .range(['#edf8fb','#bfd3e6','#9ebcda','#8c96c6','#8c6bb1','#88419d','#6e016b'])
 
 const choroplethNormalizedScale = d3.scaleThreshold()
@@ -388,7 +388,7 @@ function drawThresholdLegend() {
         colors = ["#EDF8FB","#D8CFD1","#C3A6A8","#AE7D7E","#985354","#832A2B","#6E0101"];
         title = "Avg Annual Questions per MP"
     } else {
-        thresholds = [50, 100, 500, 1000, 2000, 4000];
+        thresholds = [25, 50, 100, 500, 1000, 2000];
         colors = ['#edf8fb','#bfd3e6','#9ebcda','#8c96c6','#8c6bb1','#88419d','#6e016b'];
         title = "Total Annual Questions"
     }

@@ -40,7 +40,7 @@ h3.subtitle {
   font-family: sans-serif;
 }
 a {
-  color: rgb(253, 141, 60);
+  color: rgb(9, 92, 217);
 }
 a:hover {
   text-decoration: underline;
@@ -121,4 +121,17 @@ a:hover {
 }
 .citations {
     font-size: small;
+    
+}
+
+/* Target the second 'container' div that wraps the map and checkbox */
+#mapSection > .container:last-of-type {
+    /* 1. Allows margin: auto to work by making it a block element with a set width (or fit-content) */
+    width: fit-content; 
+    
+    /* 2. Centers the container block itself horizontally */
+    margin: 0 auto;
+    
+    /* 3. Centers inline content inside this container (like the checkbox label) */
+    text-align: center;
 }
