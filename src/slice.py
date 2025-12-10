@@ -77,7 +77,7 @@ def get_topic_counts():
     mentioned in the subjects of each question. This code calculates those
     frequencies.
     """
-    df = pd.read_csv("../www/mini.csv")
+    df = pd.read_csv("../docs/mini.csv")
 
     term_counts = {
         "health": 0,

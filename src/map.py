@@ -52,4 +52,4 @@ def merge_geojson_files():
         working["id"]
     )
 
-    working.to_file("../www/india_states.geojson", driver="GeoJSON")
+    working.to_file("../docs/india_states.geojson", driver="GeoJSON")

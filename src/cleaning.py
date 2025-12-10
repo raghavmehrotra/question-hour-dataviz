@@ -20,7 +20,7 @@ def get_clean_data(save_file=False, expand=False, mini=False):
     if mini:
         mini = df[["year", "month", "subject"]]
         mini["subject"] = mini["subject"].str.lower()
-        mini.to_csv("../www/mini.csv")
+        mini.to_csv("../docs/mini.csv")
         return mini
 
     if save_file:
