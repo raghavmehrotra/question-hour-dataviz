@@ -252,11 +252,11 @@ const tooltip = d3.select("#tooltip");
 // Source: https://colorbrewer2.org
 const choroplethScale = d3.scaleThreshold()
     .domain([50, 100, 500, 1000, 2000])
-    .range(['#edf8fb','#bfd3e6','#9ebcda','#8c96c6','#8856a7','#810f7c'])
+    .range(['#f3f6f4','#9ebcda','#8c96c6','#8c6bb1','#88419d','#6e016b'])
 
 const choroplethNormalizedScale = d3.scaleThreshold()
     .domain([20, 40, 60, 80, 100])
-    .range(["#f3f6f4","#C3A6A8","#AE7D7E","#985354","#832A2B","#6E0101"]);
+    .range(['#fee5d9','#fcbba1','#fc9272','#fb6a4a','#de2d26','#a50f15']);
 
 // Render different scale when normalized
 d3.select("#normalizeCountsCheckbox").on("change", function(event) {
