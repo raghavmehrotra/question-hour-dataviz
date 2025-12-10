@@ -345,7 +345,7 @@ function updateIndiaMap() {
 function findStateCount(state) {
     stateName = state.properties.id;
 
-    // Temporarily showing both counts as one despite the 2019 border split
+    // Showing both counts as one because the split isn't until 2019
     if(stateName == "Jammu and Kashmir" || stateName == "Ladakh") {
         stateName = "Jammu & Kashmir"
     }
