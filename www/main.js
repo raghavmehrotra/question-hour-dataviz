@@ -272,8 +272,21 @@ d3.select("#normalizeCountsCheckbox").on("change", function(event) {
 })
 
 function drawIndiaMap(geojson, path) {
+    // clear the map 
+    indiaMap.selectAll("path").remove();
     indiaMap.selectAll("path")
-        .data(geojson.features)
+        .data(geojson.features.filter(function(d, i) {
+            if(currentYear <= 2014) {
+                if(d.properties.st_nm == "Andhra Pradesh" || d.properties.st_nm == "Telangana") {
+                    return false;
+                }
+            } else {
+                if(d.properties.st_nm == "Andhra Pradesh (pre)") {
+                    return false;
+                }
+            }
+            return true;
+        }))
         .enter()
         .append("path")
         .attr("d", path)
@@ -286,17 +299,18 @@ function drawIndiaMap(geojson, path) {
         })
         .attr("stroke", "#333")
         .on("mouseover", function(event) {
-            let stateName = d3.select(this).datum().properties.st_nm
+            d = d3.select(this).datum()
+            let stateName = d.properties.id
+            let stateCount = findStateCount(d)
             if(stateName == "Telangana" && currentYear <= 2014) {
                 stateName = "Andhra Pradesh";
             }
             else if(stateName == "Ladakh") {
                 stateName = "Jammu and Kashmir"
             }
-            console.log(tooltip)
             tooltip
                 .style("opacity", 1)
-                .text(stateName)
+                .text(`${stateName}: ${stateCount}`)
                 .style("left", (event.pageX + 10) + "px")
                 .style("top", (event.pageY + 10) + "px");
         })
@@ -312,38 +326,28 @@ function drawIndiaMap(geojson, path) {
     drawThresholdLegend();
 }
 
-d3.json("india_states_post_2014.geojson").then(function(geojson) {
-    const projection = d3.geoMercator().fitSize([mapWidth, mapHeight], geojson);
-    const path = d3.geoPath().projection(projection);
+// These variables need to be global for updates later
+let stateFeatures = null;
+let projection = null;
+let path = null;
+d3.json("india_states.geojson").then(function(geojson) {
+    projection = d3.geoMercator().fitSize([mapWidth, mapHeight], geojson);
+    path = d3.geoPath().projection(projection);
+    stateFeatures = geojson;
     drawIndiaMap(geojson, path);
 })
 
 function updateIndiaMap() {
-    indiaMap
-    .selectAll("path")
-    .attr("fill", function(d, i) {
-        count = findStateCount(d);
-        if(normalizeCounts) {
-            return choroplethNormalizedScale(count);
-        }
-        return choroplethScale(count);
-    })
+    // Uses a brute force clear and redraw approach because of dynamic borders
+    drawIndiaMap(stateFeatures, path);
 }
 
 function findStateCount(state) {
-    stateName = state.properties.st_nm;
-    
-    // AP was split in 2014 into AP + Telangana
-    if(stateName == "Telangana" && currentYear <= 2014) {
-        stateName = "Andhra Pradesh"
-    }
+    stateName = state.properties.id;
 
+    // Temporarily showing both counts as one despite the 2019 border split
     if(stateName == "Jammu and Kashmir" || stateName == "Ladakh") {
         stateName = "Jammu & Kashmir"
-    }
-
-    if(stateName == "Andaman and Nicobar Islands") {
-        stateName = "Andaman & Nicobar Islands"
     }
 
     let rv = stateCounts.find(
