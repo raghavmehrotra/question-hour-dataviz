@@ -1,5 +1,7 @@
 # Generate slices of the data for various front end charts
+
 import pandas as pd
+import numpy as np
 
 def get_state_counts(save_file=False):
     df = pd.read_csv("../data/questions_expanded.csv")
@@ -10,9 +12,9 @@ def get_state_counts(save_file=False):
     state_counts = df.groupby(["year", "state"]).size().reset_index(name="count")
 
     # Source: https://geographyhost.com/lok-sabha-seats-state-wise/
-    lok_sabha_seats = {
+    seats = {
         # States
-        "Andhra Pradesh (pre‑bifurcation)": 42,  # undivided AP before Telangana split
+        "Andhra Pradesh (pre)": 42,  # undivided AP before Telangana split
         "Andhra Pradesh": 25,
         "Arunachal Pradesh": 2,
         "Assam": 14,
@@ -22,6 +24,7 @@ def get_state_counts(save_file=False):
         "Gujarat": 26,
         "Haryana": 10,
         "Himachal Pradesh": 4,
+        "Jammu & Kashmir": 5,
         "Jharkhand": 14,
         "Karnataka": 28,
         "Kerala": 20,
@@ -45,15 +48,24 @@ def get_state_counts(save_file=False):
         # Union Territories (UTs)
         "Andaman & Nicobar Islands": 1,
         "Chandigarh": 1,
-        "Dadra and Nagar Haveli and Daman and Diu": 2,
-        "Delhi (NCT)": 7,
-        "Jammu & Kashmir": 5,
-        "Ladakh": 1,
+        "Dadra Nagar & Haveli": 1,
+        "Daman & Diu": 1,
+        "Delhi": 7,
         "Lakshadweep": 1,
         "Puducherry": 1,
     }
 
-    
+    state_counts["count_per_mp"] = state_counts["count"] / state_counts["state"].str.strip().map(seats)
+
+    # Until 2014, use the undivided Andhra Pradesh numbers. After that, use the split numbers for
+    # Telangana and Andhra Pradesh
+    state_counts["count_per_mp"] = state_counts["count"] / np.where(
+        state_counts["state"].str.strip().eq("Andhra Pradesh") & (state_counts["year"] <= 2014),
+        state_counts["state"].str.strip().map({"Andhra Pradesh": seats["Andhra Pradesh (pre)"]}),
+        state_counts["state"].str.strip().map(seats)
+    )
+
+    state_counts["count_per_mp_rounded"] = state_counts["count_per_mp"].fillna(0).round().astype(int)
 
     if save_file:
         state_counts.to_csv("../data/state_counts.csv")

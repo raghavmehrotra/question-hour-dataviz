@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 import re
 
 def get_clean_data(save_file=False, expand=False, mini=False):
@@ -27,7 +26,7 @@ def get_clean_data(save_file=False, expand=False, mini=False):
     if save_file:
         df.to_csv("../data/questions.csv")
     
-     # Make the dataset one row per question-MP
+    # Make the dataset one row per question-MP
     if expand:
         df = expand_data(df)
         df = df.to_csv("../data/questions_expanded.csv")
@@ -50,11 +49,10 @@ def create_primary_cols(df):
 
 def delete_inconsistent_rows(df):
     """
-    In the .tsv file, some rows have misaligned columns and missing data.
-    Where possible, these have been corrected manually to align with the
-    rest of the data. If not, they have been removed.
+    In the .tsv file, some (< 10) rows have misaligned columns and missing data.
+    The data for these rows appears as NAs in the dataframe.
+    These rows are removed.
     """
-
     return df.dropna()
 
 def expand_data(df):
@@ -73,8 +71,6 @@ def expand_data(df):
 
     # Source: https://sparkbyexamples.com/pandas/pandas-explode-multiple-columns
     df = df.explode(cols).reset_index(drop=True)
-
-    print(df.head())
 
     for col in cols:
         df[col] = df[col].str.strip()
@@ -118,7 +114,8 @@ def standardize_constituency_names(df):
 def standardize_state_names(df):
     """
     Some states changed their official names and others have spelling errors.
-    This updates the state name to the most recent name.
+    This updates the state name to the most recent name. This is also to ensure
+    consistency with the geojson state names.
     """
 
     pattern = r"\s*Orissa\s*"
@@ -131,8 +128,12 @@ def standardize_state_names(df):
         lambda s: re.sub(pattern, "Chhattisgarh", s)
     )
 
-    df["state"] = df["state"].replace("Jammu and Kashmir", "Jammu & Kashmir")
-    df["state"] = df["state"].replace("Andaman and Nicobar Islands", "Andaman & Nicobar Islands")
+    df["state"] = df["state"].replace(
+        "Jammu and Kashmir", "Jammu & Kashmir"
+    )
+    df["state"] = df["state"].replace(
+        "Andaman and Nicobar Islands", "Andaman & Nicobar Islands"
+    )
     
     return df
 
