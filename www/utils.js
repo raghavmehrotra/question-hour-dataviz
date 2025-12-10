@@ -1,6 +1,6 @@
-
 const margin = { top: 20, right: 20, bottom: 60, left: 60 };
 
+// Helper function to make all the SVGs
 function makeChart(id, chartWidth, chartHeight) {
   const svg = d3
     .select(id)

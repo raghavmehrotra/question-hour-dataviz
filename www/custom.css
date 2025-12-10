@@ -1,59 +1,59 @@
 body {
-  background-color: rgb(0, 0, 0);
-  color: #ffffee;
+    background-color: #000000;
+    color: #ffffee;
 }
 body, html {
-  /* Removes default browser spacing that pushes content off-screen */
-  margin: 0;
-  padding: 0;
-  
-  /* Ensures 100% width is calculated correctly */
-  width: 100%; 
-  
-  /* Optional: Ensures the box model calculation is intuitive */
-  box-sizing: border-box; 
+    /* AI: My HTML div renders off the screen. How do I make it fit the screen in
+        in CSS */
+    margin: 0;
+    padding: 0;
+    
+    width: 100%; 
+    
+    box-sizing: border-box; 
+    background-color: #000000;
 }
 * {
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 .center-horizontal {
     text-align: center; 
     width: fit-content; 
     margin: 0 auto;
 }
-
 .center-horizontal iframe {
     margin: 0;
     float: none;
 }
 .section {
-    background-color: rgb(0, 0, 0);
+    background-color: #000000;
     height: 100%;
 }
 h1.title {
-  color: rgb(222, 228, 235);
-  text-align: center;
+    color: #DEE4EB;
+    text-align: center;
 }
 h3.subtitle {
-  color: rgb(222, 228, 235);
-  text-align: center;
-  font-family: sans-serif;
+    color: #DEE4EB;
+    text-align: center;
+    font-family: sans-serif;
 }
 a {
-  color: rgb(9, 92, 217);
+    color: #095CD9;
 }
 a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 .explanation {
-  background-color: #000000;
-  color: #ffffff;
+    background-color: #000000;
+    color: #ffffff;
 }
 .selectedBar {
     fill: #994e0d;
 }
 .topicsChartContainer {
-  border: 5px solid white;
+    border: 5px solid white;
 }
 #topicsLineChartContainer svg {
     margin-left: -100px; 
@@ -64,16 +64,17 @@ a:hover {
     left: 50px;
 }
 .button {
-  background-color: #04AA6D;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+  /* AI: Give me the CSS for a simple button */
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 .column {
     text-align: center;
@@ -82,29 +83,29 @@ a:hover {
     display: none;
 }
 #header {
-  /* Set Width: Block elements default to full width (100%), but 
-     it's good practice to explicitly confirm it for clarity. */
-  width: 100%; 
-  
-  /* Set Height: Use a small, fixed unit to make it "thin." 
-     You can choose px, rem, or a small viewport height (vh) percentage. */
-  height: 50px; /* Example: A thin header, adjust as needed */
-
-  /* Optional: Background color helps visualize the header's dimensions */
-  background-color: #333;
-  color: white;
-  padding: 10px 0; 
+    /* AI: Give me the CSS for a simple header for my HTML page. Make sure that
+    the header is fixed on the page and has 3 buttons that users can click to
+    navigate the website */
+    width: 100%; 
+    height: 50px;
+    background-color: #333;
+    color: white;
+    padding: 10px 0; 
 }
 
 .topnav {
-    display: flex; /* Enable flexbox */
-    justify-content: flex-start; /* Push items to the right side of the container */
+    /* AI: Give me the CSS for a simple header for my HTML page. Make sure that
+    the header is fixed on the page and has 3 left justified buttons that users
+    can click to navigate the website */
+    display: flex;
+    justify-content: flex-start;
     background-color: #333;
-    /* Remove 'overflow: hidden;' if you switch to Flexbox */
 }
 
 .topnav a {
-    /* Remove 'float: right;' if you use Flexbox */
+    /* AI: Give me the CSS for a simple header for my HTML page. Make sure that
+    the header is fixed on the page and has 3 left justified buttons that users
+    can click to navigate the website */
     color: #f2f2f2;
     text-align: center;
     padding: 6px 14px;
@@ -121,36 +122,26 @@ a:hover {
 }
 .citations {
     font-size: small;
-    
 }
 
-/* Target the second 'container' div that wraps the map and checkbox */
 #mapSection > .container:last-of-type {
-    /* 1. Allows margin: auto to work by making it a block element with a set width (or fit-content) */
+    /* AI: How do I make sure my svg map is centered inside my div? */
     width: fit-content; 
-    
-    /* 2. Centers the container block itself horizontally */
     margin: 0 auto;
-    
-    /* 3. Centers inline content inside this container (like the checkbox label) */
     text-align: center;
 }
 
 #tooltip {
-    /* Required for positioning relative to the body */
     position: absolute;
-    /* Invisible by default */
     opacity: 0; 
-    /* The tiny box style */
     padding: 2px 2px;
     background: #333;
     color: #fff;
     border: 1px solid #fff;
     border-radius: 2px;
     font-size: 14px;
-    /* Optional: Smooth transition for fade-in/out */
     transition: opacity 0.2s;
-    /* Ensure it shows above the map */
     pointer-events: none;
+    /* Added to make sure that it renders over the map not "under" */
     z-index: 9999; 
 }
