@@ -1,0 +1,140 @@
+<!--
+CSS Source: <https://bulma.io/documentation/start/overview/>
+-->
+<!doctype html>
+<html>
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Lok Sabha - Question Hour
+    </title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    />
+
+    <link rel="stylesheet" href="custom.css" />
+
+    <style type="text/css">
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  </head>
+  <body>
+    
+    <div id="tooltip"></div>
+    <section id="header" class="section permanent">
+        <div class="topnav">
+            <a class="toggleView" data-rendering-id="home">Home</a>
+            <a class="toggleView" data-rendering-id="textSearchSection">Topics</a>
+            <a class="toggleView" data-rendering-id="mapSection">States</a>
+        </div>
+    </section>
+    <section id="home" class="section">
+        <h1 class="title">Exploring the Lok Sabha's Question Hour</h1>
+        <div class="container explanation">
+            <p class="block">
+                Parliamentary elections to the Lok Sabha are held in India every 5 years. While candidates running for office are often under scrutiny due to the high stakes of elections, the Indian
+                Constitution has also encoded practices to hold Members of Parliament accountable to citizens once elected.
+            </p>
+            <p class="block">
+                One such tool is the Lok Sabha's Question Hour, the first hour of daily parliamentary proceedings when MPs raise questions about government administration and activity.
+                Questions cover diverse areas of public interest, including food security, government spending, healthcare, and climate change. The Government must provide a reply to the MP raising the question.
+            </p>
+            <p class="block">
+                This website is intended to help citizens understand the Question Hour better. Using data from 2001 to 2018, you can explore what topics are being discussed and how frequently, as well as how MPs from different states have used the Question Hour over time.
+                If you are not familiar with the Lok Sabha's proceedings, this video might be a helpful example of how the Question Hour operates.
+            </p>
+            <div class="center-horizontal">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/T03SnK0LYqI?si=JNiEpzHzK0Leii0N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div id="entryButtonsContainer" class="container columns">
+            <div class="column">
+                <button id="textSearchButton" class="button" data-rendering-id="textSearchSection">Explore by Topic</button>
+                <p>Which topics are covered in the Question Hour? Click here to explore.</p>
+            </div>
+            <div class="column">
+                <button id="mapSearchButton" class="button" data-rendering-id="mapSection">Explore by State</button>
+                <p>Which states participate more than others? Click here to explore.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="textSearchSection" class="hidden">
+        <div class="container explanation">
+            <h3 class="subtitle">Comparing Themes/Topics in the Question Hour</h3>
+            <p class="block">
+                Topics discussed during the Question Hour vary widely, but they are typically asked with the aim of holding the government accountable.
+            </p>
+            <p class="block">
+                In the graph below (left), each bar represents the number of times the subject of a question contained a particular theme (or topic).
+                Enter a topic of your choice (e.g. "migration", "food", "gender") to see how it compares to other topics discussed in the Question Hour.
+                You will also see a line chart appear on the right indicating how that theme has appeared over time.
+            </p>
+            <div>
+                Enter a search term:
+                <input type="text" id="searchQuery" class="search-query"/>
+                <input type="submit" id="submitSearchQuery" value="Submit" />
+            </div>
+        </div>
+
+        <div class="container columns">
+            <div id="topicsChartCol" class="column">
+                <h3 id="topicsChartHeader">Frequency of Topics in the Question Hour (2001-2018)</h3>
+                <div class="block svgContainer" id="topicsChartContainer"></div>
+            </div>
+            
+            <div id="topicsLineChartCol" class="column">
+                <h3 id="topicsLineChartHeader">Annual Mentions of Topic in the Question Hour (enter text to see chart)</h3>
+                <div class="block svgContainer" id="topicsLineChartContainer"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mapSection" class="hidden">
+        <div class="container explanation">
+            <h3 class="subtitle" id="mapHeader">Comparing States' Participation in the Question Hour</h3>
+            <p class="block">
+                Indian states have very different political and social histories and hold the government accountable in different ways.
+                By dragging the slider along the line, you can explore the number of questions that MPs of each state asked in the
+                Question Hour from 2001 to 2018.
+            </p>
+            <p class="block">
+                Each state has a vastly different number of MPs in the Lok Sabha (Uttar Pradesh has 80, Karnataka has 28 and Sikkim has 1).
+                Remember to use the checkbox that allows you to normalize the number of questions by MP.
+            </p>
+            <br/>
+            <br/>
+        </div>
+
+        <div class="container">
+            <div id="indiaMapContainer" class="container" style="position:relative"></div>
+            <label id="normalizeCountsCheckboxLabel" for="normalizeCountsCheckbox">
+                <input type="checkbox" id="normalizeCountsCheckbox">
+                    Show questions per MP instead of absolute numbers
+            </label>
+        </div>
+    </section>
+
+    <div id="citations" class="citations">
+        <p>
+            Data: "TPCD-IPD: <a href="https://tcpd.ashoka.edu.in/question-hour/">TCPD Indian Parliament Dataset (Question Hour) 1.0"</a>. Bhogale, Saloni. Trivedi Centre for Political Data, Ashoka University, 2019.
+        </p>
+        <p>
+            Maps: Parliamentary Constituencies Maps are provided by <a href="https://projects.datameet.org/maps/">Data{Meet} Community Maps Project</a>.
+            It has been made available under the <a href="https://creativecommons.org/licenses/by/2.5/in/">Creative Commons Attribution 2.5 India</a>.
+        </p>
+        <p>
+            Pre 2014 (and 2019) borders were downloaded from <a href="https://groups.google.com/g/datameet/c/dZ96g7ngWAg">the DataMeet community forum</a>
+        </p>
+    </div>
+
+    <script src="utils.js"></script>
+    <!--This provides a template for a simple slider to move through the map-->
+    <!--Source: https://github.com/johnwalley/d3-simple-slider-->
+    <script src="https://unpkg.com/d3-simple-slider@2.0.0/dist/d3-simple-slider.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
