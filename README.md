@@ -26,4 +26,4 @@ I am grateful to the team at the Trivedi Center for Political Data, Ashoka Unive
 ## Instructions
 1. Download or clone this repository.
 2. Navigate to the "docs" directory and run the command "uv run python -m http.server" to start up a localhost.
-3. (optional) If you want to analyze the raw data, download it from here. Move the raw data into a /data folder in the root directory. Run the cleaning and slice scripts in /src.
+3. (optional) If you want to analyze the raw data, download it from [here](https://tcpd.ashoka.edu.in/question-hour). Move the raw data into a /data folder in the root directory. Run the cleaning and slice scripts in /src.
